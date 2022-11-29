@@ -1,21 +1,22 @@
-# penkins
-Photobox Hackathon 2016
+To run application using PyCharm runner configuration.
 
-The goal of Penkins is to control the output an Ada Fruit RGB Matrix via a Raspberry PI.  
+In Run/Debug Configurations, for new Python configuration:
 
-The output will initially be based around Jenkins builds.  
+Point to your behave module, specific to your installation. e.g:
 
-We require:
+    c:\Users\43978999\AppData\Roaming\Python\Python36\site-packages\behave\__main__.py
 
--  Code to send display data to the RGB Matrix (Python/C)
--  Code to hook into Jenkins and relay the events to the subsystem powering the Matrix (Node, of course :p)
+Point to feature you want to execute in "Script parameters", e.g:
 
-See [this link](https://dl.dropboxusercontent.com/u/1974667/monkey.jpg) for an example Storyboard of how this might look.
+    tests\features\logon.feature
 
-## Resources
+Set "Working directory" to reflect desired starting point for behave script, e.g:
 
--  [Library](https://github.com/hzeller/rpi-rgb-led-matrix)
--  [Driving the Matrix](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/driving-matrices)
--  [Learn Python](http://www.learnpython.org/)
--  [Python on Code Academy](https://www.codecademy.com/learn/python)
--  
+    C:\Users\43978999\PycharmProjects\myPEAP-automation
+
+Please note that report generation is not working when you are in debug mode.
+
+To run single feature from terminal (and have reports generated locally) use following example.
+First "cd" to "tests" subdirectory!
+
+    "C:\swdtools\Python3.6.3 X64\python.exe" -m behave features\logon.feature
